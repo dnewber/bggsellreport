@@ -1,0 +1,32 @@
+<h1>BGG Sell Report Form</h1>
+<form id='sellReport'>
+    <label for="username">BGG Username</label>
+    <input id="username" type="text">
+    <button type="submit">Generate Report</button>
+</form>
+<textarea style="display:none;overflow:scroll" id="resultBox"></textarea>
+
+
+<script type="text/javascript">
+    const element = document.querySelector('form');
+    element.addEventListener('submit', event => {
+        event.preventDefault();
+        var output = document.getElementById("resultBox");
+        output.style.display = 'block';
+        if (username.value) {
+            fetch('/sellreport/u/' + username.value)
+                .then((response) => {
+                    output.textContent = "Generating Report...";
+                    return response.json();
+                })
+                .then((data) => {
+                    output.textContent = data.report;
+                })
+                .catch((error) => {
+                  output.textContent = 'Error: ' + error;
+                });
+        } else {
+            output.textContent = "Please enter a BGG Username"
+        }
+    });
+</script>
