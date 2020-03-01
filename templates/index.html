@@ -1,10 +1,63 @@
-<h1>BGG Sell Report Form</h1>
-<form id='sellReport'>
-    <label for="username">BGG Username</label>
-    <input id="username" type="text">
-    <button type="submit">Generate Report</button>
-</form>
-<textarea style="display:none;overflow:scroll" id="resultBox"></textarea>
+<style type="text/css">
+    #resultBox {
+        display: none;
+        overflow: scroll;
+        height: 350px;
+    }
+    #username {
+        display: inline;
+    }
+    .coffeeBtn {
+        background-color: gray !important;
+        border-color: black !important;
+        display: inline-flex !important;
+        padding: 0px 10px;
+    }
+    .coffeeBtn > img {
+        margin-right: 10px;
+        padding: 2px;
+    }
+</style>
+
+<head>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="row"><h1 style="padding-top:20px;">BoardGameGeek Sell Report</h1></div>
+        <div class="row"><h6>Generate a list of games in your collection with no logged plays for a year</h6></div>
+        <div class="row">
+            <form id='sellReport'>
+                <label for="username">BGG Username</label>
+                <input id="username" type="text">
+                <button type="submit">Generate Report</button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="column column-50">
+                <div class="row"><textarea id="resultBox"></textarea></div>
+            </div>
+        </div>
+
+        <hr>
+        <div class="row">
+            <div class="column column-20">
+                <ul><p>Was this helpful? </p></ul>
+                <ul><a class="button coffeeBtn" target="_blank" href="https://www.buymeacoffee.com/dustinnewberry">
+                    <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
+                    Buy me a coffee
+                </a></ul>
+            </div>
+            <div class="column column-33 column-offset-50">
+                <span><a href="https://twitter.com/BoardGameBang">@boardgamebang</a><br></span>
+                <span><a href="https://boardgamegeek.com/user/doosteen">BGG:doosteen</a></span>
+            </div>
+        </div>
+    </div>
+</body>
 
 
 <script type="text/javascript">
@@ -23,7 +76,8 @@
                     output.textContent = data.report;
                 })
                 .catch((error) => {
-                  output.textContent = 'Error: ' + error;
+                    debugger
+                    output.textContent = 'Error: ' + error;
                 });
         } else {
             output.textContent = "Please enter a BGG Username"

@@ -4,7 +4,6 @@ from math import ceil
 
 
 def sell_report(username, since):
-    return 'TEST\nTEXT\nHERE'
     output = ""
     collection = _build_collection_index(username)
     plays = _build_plays_set(username, since)
