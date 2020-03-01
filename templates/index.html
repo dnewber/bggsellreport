@@ -8,8 +8,8 @@
         display: inline;
     }
     .coffeeBtn {
-        background-color: gray !important;
-        border-color: black !important;
+        background-color: #FF813F !important;
+        border-color: gray !important;
         display: inline-flex !important;
         padding: 0px 10px;
     }
@@ -47,13 +47,13 @@
             <div class="column column-20">
                 <ul><p>Was this helpful? </p></ul>
                 <ul><a class="button coffeeBtn" target="_blank" href="https://www.buymeacoffee.com/dustinnewberry">
-                    <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
+                    <img src="{{ url_for('static', filename='coffee.svg') }}" alt=" ">
                     Buy me a coffee
                 </a></ul>
             </div>
             <div class="column column-33 column-offset-50">
-                <span><a href="https://twitter.com/BoardGameBang">@boardgamebang</a><br></span>
-                <span><a href="https://boardgamegeek.com/user/doosteen">BGG:doosteen</a></span>
+                <span><a target="_blank" href="https://twitter.com/BoardGameBang">@boardgamebang</a><br></span>
+                <span><a target="_blank" href="https://boardgamegeek.com/user/doosteen">BGG:doosteen</a></span>
             </div>
         </div>
     </div>
